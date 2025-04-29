@@ -1,4 +1,4 @@
-package dev.forward.casino.slots;
+package dev.forward.casino.element;
 
 import dev.forward.casino.engine.animation.Animation;
 import dev.forward.casino.engine.elements.*;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-public class HouseScreen extends AbstractGuiScreen {
+public class MainScreen extends AbstractGuiScreen {
     private final List<ScrollingPanel> slots = new ArrayList<>();
     private final HorizontalLayout scrolling;
     private final BalanceText balance;
@@ -23,7 +23,7 @@ public class HouseScreen extends AbstractGuiScreen {
     private CarvedRectangle info;
     private V3 nonInfoSize;
     private VerticalLayout bg;
-    public HouseScreen(List<SlotEnum> stacks, int bal) {
+    public MainScreen(List<SlotEnum> stacks, int bal) {
         super();
         VerticalLayout mainLayout = new VerticalLayout().setPosY(10);
         HorizontalLayout casino = new HorizontalLayout(5);

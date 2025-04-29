@@ -1,4 +1,4 @@
-package dev.forward.casino.slots;
+package dev.forward.casino.element;
 
 import dev.forward.casino.util.color.Color;
 import dev.forward.casino.util.color.Palette;

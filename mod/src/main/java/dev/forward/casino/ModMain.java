@@ -1,20 +1,16 @@
 package dev.forward.casino;
 
 import dev.forward.casino.engine.Engine;
-import dev.forward.casino.slots.HouseScreen;
-import dev.forward.casino.slots.SlotEnum;
+import dev.forward.casino.element.MainScreen;
+import dev.forward.casino.element.SlotEnum;
 import dev.forward.casino.util.FastAccess;
 import dev.forward.casino.util.network.ModTransfer;
-import dev.forward.casino.util.network.NetUtil;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.item.ItemStack;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class CasinoSlot implements ModInitializer, FastAccess {
+public class ModMain implements ModInitializer, FastAccess {
 
     @Override
     public void onInitialize() {
@@ -28,11 +24,11 @@ public class CasinoSlot implements ModInitializer, FastAccess {
                     stacks.add(SlotEnum.valueOf(modTransfer.readString()));
                 }
 
-                new HouseScreen(stacks,bal).open();
+                new MainScreen(stacks,bal).open();
             });
         });
         ModTransfer.registerChannel("house:scroll", modTransfer -> {
-            HouseScreen screen = Engine.getCurrentScreen();
+            MainScreen screen = Engine.getCurrentScreen();
             if (screen != null) {
                 int winningItemsCount = 15;
                 List<SlotEnum> stacks = new ArrayList<>();

@@ -1,4 +1,4 @@
-package dev.forward.casino.slots;
+package dev.forward.casino.element;
 
 import dev.forward.casino.engine.elements.CarvedRectangle;
 import dev.forward.casino.engine.elements.Text;

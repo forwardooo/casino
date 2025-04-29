@@ -1,11 +1,10 @@
-package dev.forward.casino.slots;
+package dev.forward.casino.element;
 
 import dev.forward.casino.engine.elements.ScrollVerticalScrollView;
 import dev.forward.casino.engine.elements.VerticalLayout;
 import dev.forward.casino.engine.event.PreRenderEvent;
 import dev.forward.casino.engine.animation.Animation;
 import dev.forward.casino.engine.animation.EasingFunc;
-import dev.forward.casino.util.color.Palette;
 import dev.forward.casino.util.math.Relative;
 import dev.forward.casino.util.math.V3;
 
@@ -49,7 +48,7 @@ public class ScrollingPanel extends ScrollVerticalScrollView<VerticalLayout> {
         horizontalLayout.setPos(pos);
         double[] initialPos = new double[]{pos.getY()};
         double finalOffset = (totalOffset + 13) / (sizeLayout - this.getSize().getY());
-        HouseScreen screen = (HouseScreen) this.getUpperParent().getUpperParent();
+        MainScreen screen = (MainScreen) this.getUpperParent().getUpperParent();
         double duration = fast ? 1 + (screen.getSlots().indexOf(this) * 0.25) : 2 + (screen.getSlots().indexOf(this) * 0.5);
         Animation.play(this, "play", duration, EasingFunc.EASE_OUT_QUINT, (element, progress) -> {
             this.setScrollProgress(finalOffset * (1 - progress));
@@ -77,7 +76,7 @@ public class ScrollingPanel extends ScrollVerticalScrollView<VerticalLayout> {
         horizontalLayout.setPos(pos);
         double[] initialPos = new double[]{pos.getY()};
         double finalOffset = (totalOffset + 13) / (sizeLayout - this.getSize().getY());
-        HouseScreen screen = (HouseScreen) this.getUpperParent().getUpperParent();
+        MainScreen screen = (MainScreen) this.getUpperParent().getUpperParent();
         double duration = fast ? 1 + (screen.getSlots().indexOf(this) * 0.25) : 2 + (screen.getSlots().indexOf(this) * 0.5);
         Animation.play(this, "play", duration, EasingFunc.EASE_OUT_QUINT, (element, progress) -> {
             this.setScrollProgress(finalOffset * (1 - progress));

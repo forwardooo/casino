@@ -1,12 +1,9 @@
-package dev.forward.casino.slots;
+package dev.forward.casino.element;
 
 import dev.forward.casino.engine.elements.Button;
 import dev.forward.casino.engine.elements.Image;
-import dev.forward.casino.util.color.ButtonColor;
 import dev.forward.casino.util.math.*;
 import lombok.Getter;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
 @Getter

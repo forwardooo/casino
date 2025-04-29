@@ -1,4 +1,4 @@
-package dev.forward.casino.slots;
+package dev.forward.casino.element;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import dev.forward.casino.engine.elements.AbstractElement;
