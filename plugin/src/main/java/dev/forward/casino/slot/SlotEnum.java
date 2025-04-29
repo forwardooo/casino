@@ -1,4 +1,4 @@
-package dev.forward.casino.slots;
+package dev.forward.casino.slot;
 
 import dev.forward.casino.util.RandomObject;
 import lombok.AllArgsConstructor;

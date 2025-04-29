@@ -1,4 +1,4 @@
-package dev.forward.casino.event.events.network;
+package dev.forward.casino.event.impl.network;
 
 import dev.forward.casino.util.network.ModTransfer;
 import io.netty.buffer.ByteBuf;

@@ -5,7 +5,7 @@ import dev.forward.casino.modules.CommandModule;
 import dev.forward.casino.modules.Module;
 import dev.forward.casino.modules.NetworkModule;
 import dev.forward.casino.modules.PlayerDataModule;
-import dev.forward.casino.slots.SlotEnum;
+import dev.forward.casino.slot.SlotEnum;
 import dev.forward.casino.util.FastAccess;
 import dev.forward.casino.util.network.ModTransfer;
 import lombok.Getter;

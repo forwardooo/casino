@@ -4,7 +4,7 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import com.mojang.authlib.properties.PropertyMap;
 import dev.forward.casino.event.EventBus;
-import dev.forward.casino.event.events.network.PluginMessage;
+import dev.forward.casino.event.impl.network.PluginMessage;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import lombok.Getter;

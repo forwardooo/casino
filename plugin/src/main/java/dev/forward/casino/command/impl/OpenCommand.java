@@ -1,12 +1,10 @@
 package dev.forward.casino.command.impl;
 
-import dev.forward.casino.Casino;
 import dev.forward.casino.command.Arguments;
 import dev.forward.casino.command.CustomCommand;
-import dev.forward.casino.slots.SlotEnum;
+import dev.forward.casino.slot.SlotEnum;
 import dev.forward.casino.util.network.ModTransfer;
 import io.netty.buffer.Unpooled;
-import net.minecraft.server.v1_16_R3.PacketDataSerializer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;

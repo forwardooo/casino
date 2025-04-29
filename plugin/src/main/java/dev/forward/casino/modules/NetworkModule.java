@@ -6,14 +6,8 @@ import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketEvent;
 import dev.forward.casino.Casino;
 import dev.forward.casino.event.EventBus;
-import dev.forward.casino.event.events.network.PluginMessage;
-import dev.forward.casino.slots.SlotEnum;
-import dev.forward.casino.util.network.ModTransfer;
+import dev.forward.casino.event.impl.network.PluginMessage;
 import net.minecraft.server.v1_16_R3.PacketPlayInCustomPayload;
-import org.bukkit.entity.Player;
-
-import java.util.*;
-import java.util.function.IntConsumer;
 
 public class NetworkModule extends Module {
 
