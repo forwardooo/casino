@@ -14,7 +14,7 @@ public class MouseMixin {
     @Inject(method = "onMouseButton", at = @At("HEAD"), cancellable = true)
     private void hookMousePress(long window, int button, int action, int mods, CallbackInfo ci) {
         if (MinecraftClient.getInstance().getWindow().getHandle() == window) {
-            MousePress press = MousePress.BUS.fire(MousePress.set(button, action == 1));
+            MousePress press = MousePress.BUS.fire(MousePress.of(button, action == 1));
             if (press.isCancelled()) {
                 ci.cancel();
             }
@@ -23,7 +23,7 @@ public class MouseMixin {
     @Inject(method = "onMouseScroll", at = @At("HEAD"), cancellable = true)
     private void hookScroll(long window, double horizontal, double vertical, CallbackInfo ci) {
         if (MinecraftClient.getInstance().getWindow().getHandle() == window) {
-            MouseWheel.BUS.fire(MouseWheel.set((int) vertical));
+            MouseWheel.BUS.fire(MouseWheel.of((int) vertical));
         }
     }
 }

@@ -9,7 +9,7 @@ public class TextPaste implements Event {
     private static final TextPaste INSTANCE = new TextPaste();
     @Getter
     private String text;
-    public static TextPaste set(String text) {
+    public static TextPaste of(String text) {
         INSTANCE.text=  text;
         return INSTANCE;
     }

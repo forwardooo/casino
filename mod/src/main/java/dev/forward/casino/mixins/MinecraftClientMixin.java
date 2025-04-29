@@ -30,7 +30,7 @@ public class MinecraftClientMixin {
     }
     @Inject(method = "openScreen", at = @At("HEAD"), cancellable = true)
     private void hookOpenScreen(Screen screen, CallbackInfo ci) {
-        ScreenDisplay event = ScreenDisplay.BUS.fire(ScreenDisplay.set(screen));
+        ScreenDisplay event = ScreenDisplay.BUS.fire(ScreenDisplay.of(screen));
         if (event.isCancelled()) ci.cancel();
     }
     @Inject(method = "tick", at = @At("HEAD"))

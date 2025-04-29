@@ -9,12 +9,12 @@ import net.minecraft.text.Text;
 
 import java.util.List;
 
+@Getter
 public class ItemTooltipRender extends TooltipRender implements Event {
     public static EventBus<ItemTooltipRender> BUS = new EventBus<>();
     private static final ItemTooltipRender INSTANCE = new ItemTooltipRender();
-    @Getter
     private ItemStack stack;
-    public static ItemTooltipRender set(MatrixStack stack, ItemStack itemStack, List<Text> list, int n, int n2) {
+    public static ItemTooltipRender of(MatrixStack stack, ItemStack itemStack, List<Text> list, int n, int n2) {
         INSTANCE.setMatrices(stack);
         INSTANCE.stack = itemStack;
         INSTANCE.content = list;

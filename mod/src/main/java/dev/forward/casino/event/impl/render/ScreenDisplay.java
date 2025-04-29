@@ -11,7 +11,7 @@ public class ScreenDisplay implements Event {
     private static final ScreenDisplay INSTANCE = new ScreenDisplay();
     @Getter
     private Screen screen;
-    public static ScreenDisplay set(Screen screen) {
+    public static ScreenDisplay of(Screen screen) {
         INSTANCE.screen = screen;
         INSTANCE.cancelled = false;
         return INSTANCE;

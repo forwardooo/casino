@@ -15,9 +15,8 @@ public class MousePress implements Event {
     private boolean cancelled;
     @Getter
     private boolean state;
-    public static MousePress set(int button, boolean state) {
+    public static MousePress of(int button, boolean state) {
         INSTANCE.button = button;
-
         INSTANCE.state = state;
         INSTANCE.cancelled = false;
         return INSTANCE;

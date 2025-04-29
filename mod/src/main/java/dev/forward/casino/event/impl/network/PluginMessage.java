@@ -11,7 +11,7 @@ public class PluginMessage implements Event {
     private static final PluginMessage INSTANCE = new PluginMessage();
     private ByteBuf data;
     private String channel;
-    public static PluginMessage set(String channel, ByteBuf data) {
+    public static PluginMessage of(String channel, ByteBuf data) {
         INSTANCE.channel = channel;
         INSTANCE.data = data;
         return INSTANCE;

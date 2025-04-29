@@ -13,7 +13,7 @@ public class KeyPress implements Event {
     @Getter
     @Setter
     private boolean cancelled;
-    public static KeyPress set(int key) {
+    public static KeyPress of(int key) {
         INSTANCE.key = key;
         INSTANCE.cancelled = false;
         return INSTANCE;

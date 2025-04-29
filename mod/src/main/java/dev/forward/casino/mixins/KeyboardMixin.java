@@ -14,7 +14,7 @@ public class KeyboardMixin {
     private void hookKeyPress(long window, int key, int scancode, int action, int modifiers, CallbackInfo ci) {
         if (MinecraftClient.getInstance().getWindow().getHandle() == window) {
             if (action == 1) {
-                KeyPress keyPress = KeyPress.BUS.fire(KeyPress.set(key));
+                KeyPress keyPress = KeyPress.BUS.fire(KeyPress.of(key));
                 if (keyPress.isCancelled()) {
                     ci.cancel();
                 }

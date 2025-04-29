@@ -23,12 +23,12 @@ public class ScreenMixin {
     private void hookKeyPress(int keyCode, int scanCode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
         if ((Screen.hasControlDown() || Screen.hasShiftDown()) && keyCode == GLFW.GLFW_KEY_V) {
             String clipboard = MinecraftClient.getInstance().keyboard.getClipboard();
-            TextPaste.BUS.fire(TextPaste.set(clipboard));
+            TextPaste.BUS.fire(TextPaste.of(clipboard));
         }
     }
     @Inject(method = "renderTooltip(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/item/ItemStack;II)V", at = @At("HEAD"), cancellable = true)
     private void hookTooltip(MatrixStack matrices, ItemStack stack, int x, int y, CallbackInfo ci) {
-        ItemTooltipRender tooltipRender = ItemTooltipRender.BUS.fire(ItemTooltipRender.set(matrices, stack, getTooltipFromItem(stack), x,y));
+        ItemTooltipRender tooltipRender = ItemTooltipRender.BUS.fire(ItemTooltipRender.of(matrices, stack, getTooltipFromItem(stack), x,y));
         if (tooltipRender.isCancelled()) {
             ci.cancel();
         } else {

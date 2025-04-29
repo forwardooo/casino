@@ -12,6 +12,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class IngameHudMixin {
     @Inject(method = "render", at = @At("RETURN"))
     private void hookGuiOverlayRender(MatrixStack matrices, float tickDelta, CallbackInfo ci) {
-        GuiOverlayRender.BUS.fire(GuiOverlayRender.set(matrices, tickDelta));
+        GuiOverlayRender.BUS.fire(GuiOverlayRender.of(matrices, tickDelta));
     }
 }

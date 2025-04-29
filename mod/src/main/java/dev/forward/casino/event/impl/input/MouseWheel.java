@@ -9,9 +9,8 @@ public class MouseWheel implements Event {
     private static final MouseWheel INSTANCE = new MouseWheel();
     @Getter
     private int wheel;
-    public static MouseWheel set(int wheel) {
+    public static MouseWheel of(int wheel) {
         INSTANCE.wheel = wheel;
-
         return INSTANCE;
     }
 }

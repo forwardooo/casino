@@ -12,7 +12,7 @@ public class PluginMessage {
     private ModTransfer data;
     private Player player;
 
-    public static PluginMessage set(String channel, ByteBuf data, Player player) {
+    public static PluginMessage of(String channel, ByteBuf data, Player player) {
         INSTANCE.channel = channel;
         INSTANCE.data = new ModTransfer(data);
         INSTANCE.player = player;

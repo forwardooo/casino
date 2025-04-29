@@ -21,7 +21,7 @@ public class NetworkModule extends Module {
                             PacketPlayInCustomPayload packet = (PacketPlayInCustomPayload) event.getPacket().getHandle();
                             String channel = packet.tag.toString();
                             EventBus.of(PluginMessage.class).fire(
-                                    PluginMessage.set(channel, packet.data.slice(), event.getPlayer())
+                                    PluginMessage.of(channel, packet.data.slice(), event.getPlayer())
                             );
                         }
                     }
