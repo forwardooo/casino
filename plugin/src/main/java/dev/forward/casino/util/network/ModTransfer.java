@@ -35,6 +35,7 @@ public class ModTransfer {
         this.buffer.writeInt(i);
         return this;
     }
+
     public static void setupChannel(int priority, String channel, Consumer<PluginMessage> consumer) {
         EventBus.of(PluginMessage.class).register(priority, plm -> {
             if (plm.getChannel().equals(channel)) {
@@ -42,6 +43,7 @@ public class ModTransfer {
             }
         });
     }
+
     public static void setupChannel(String channel, Consumer<PluginMessage> consumer) {
         setupChannel(1, channel, consumer);
     }

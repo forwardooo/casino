@@ -17,7 +17,6 @@ import java.util.function.IntConsumer;
 
 public final class Casino extends JavaPlugin implements FastAccess {
     private final Map<Class<? extends Module>, Module> modules = new HashMap<>();
-
     @Getter
     private static Casino instance;
 

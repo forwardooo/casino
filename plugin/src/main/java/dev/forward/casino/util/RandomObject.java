@@ -30,6 +30,7 @@ public class RandomObject<T> {
         }
         this.totalWeight = weightMap.size();
     }
+
     public T get() {
         int randomValue = random.nextInt(totalWeight);
         int currentSum = 0;

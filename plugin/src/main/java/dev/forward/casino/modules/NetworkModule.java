@@ -28,7 +28,6 @@ public class NetworkModule extends Module {
                 });
     }
 
-
     @Override
     public void unload() {
     }

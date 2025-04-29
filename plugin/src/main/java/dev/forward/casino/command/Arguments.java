@@ -18,19 +18,24 @@ public class Arguments {
             return true;
         return args.length == 0;
     }
+
     public String get(int index) {
         if (args.length > index) {
             return args[index];
         }
         return "";
     }
+
     public int asInt(int index) {
         return Integer.parseInt(get(index));
     }
+
     public double asDouble(int index) {
         return Double.parseDouble(get(index));
     }
+
     public float asFloat(int index) {
         return Float.parseFloat(get(index));
     }
+
 }

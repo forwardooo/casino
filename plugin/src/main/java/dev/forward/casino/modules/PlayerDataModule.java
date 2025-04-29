@@ -18,11 +18,13 @@ import java.util.Map;
 import java.util.UUID;
 
 public class PlayerDataModule extends Module {
+    private final Map<UUID, FileConfiguration> playerData = new HashMap<>();
     @Override
     public void load() {
         EventBus.of(PlayerJoinEvent.class).register((PlayerJoinEvent join) -> loadPlayerData(join.getPlayer()));
         EventBus.of(PlayerQuitEvent.class).register((quit) -> savePlayerData(quit.getPlayer()));
     }
+
     @Override
     public void unload() {
         for (Player player : Bukkit.getOnlinePlayers()) {
@@ -30,7 +32,6 @@ public class PlayerDataModule extends Module {
         }
     }
 
-    private final Map<UUID, FileConfiguration> playerData = new HashMap<>();
     @SneakyThrows
     public void loadPlayerData(Player player) {
         UUID uuid = player.getUniqueId();
@@ -46,6 +47,7 @@ public class PlayerDataModule extends Module {
         addDefault(config, "bet", 55);
         playerData.put(uuid, config);
     }
+
     @SneakyThrows
     public void savePlayerData(Player player) {
         UUID uuid = player.getUniqueId();
@@ -57,6 +59,7 @@ public class PlayerDataModule extends Module {
     public FileConfiguration get(Player player) {
         return playerData.get(player.getUniqueId());
     }
+
     private void addDefault(FileConfiguration config, String identifier, Object value) {
         if (!config.contains(identifier)) {
             config.set(identifier, value);

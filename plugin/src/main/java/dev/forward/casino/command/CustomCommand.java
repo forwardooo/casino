@@ -13,10 +13,12 @@ import java.util.List;
 public abstract class CustomCommand implements CommandExecutor, TabCompleter, FastAccess {
     private final String commandName;
     private final boolean consoleAccess;
+
     public CustomCommand(String commandName, boolean consoleAccess) {
         this.commandName = commandName;
         this.consoleAccess = consoleAccess;
     }
+
     public void register(JavaPlugin plugin) {
         PluginCommand command = plugin.getCommand(commandName);
         if (command != null) {
@@ -25,8 +27,8 @@ public abstract class CustomCommand implements CommandExecutor, TabCompleter, Fa
         } else {
             Casino.getInstance().getLogger().warning(String.format("Command not %s not exists!", commandName));
         }
-
     }
+
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String string, String[] strings) {
         Arguments args = new Arguments(strings);
         CraftPlayer player = isPlayer(commandSender);
@@ -36,12 +38,14 @@ public abstract class CustomCommand implements CommandExecutor, TabCompleter, Fa
         }
         return onCommand(commandSender, player, command, args);
     }
+
     public List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, String[] strings) {
         Arguments args = new Arguments(strings);
         CraftPlayer player = isPlayer(commandSender);
         if(player == null) return Collections.emptyList();
         return onTabComplete(commandSender, player, command, args);
     }
+
     public abstract boolean onCommand(CommandSender sender, CraftPlayer player, Command command, Arguments args);
 
     public abstract List<String> onTabComplete(CommandSender sender, CraftPlayer player, Command command, Arguments args);
