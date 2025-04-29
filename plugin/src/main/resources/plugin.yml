@@ -1,0 +1,13 @@
+name: Casino
+version: '1.0'
+main: dev.forward.casino.Casino
+api-version: '1.16'
+prefix: Casino
+authors: [ forward ]
+depend:
+  - ProtocolLib
+commands:
+  open:
+    description: open main ui
+  balance:
+    description: balance

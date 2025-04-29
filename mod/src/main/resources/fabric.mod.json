@@ -1,0 +1,25 @@
+{
+  "accessWidener": "casino.accesswidener",
+  "schemaVersion": 1,
+  "id": "casino",
+  "version": "${version}",
+  "name": "Dog House",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "dev.forward.casino.CasinoSlot"
+    ]
+  },
+  "mixins": [
+    "casino.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "*",
+    "fabric": "*",
+    "minecraft": "*"
+  }
+}

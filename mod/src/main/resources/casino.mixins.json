@@ -1,0 +1,26 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.forward.casino.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "accessors.CustomPayloadC2SPacketAccessor"
+  ],
+  "client": [
+    "ClientPlayNetworkHandlerMixin",
+    "IngameHudMixin",
+    "KeyboardMixin",
+    "MainMixin",
+    "MinecraftClientMixin",
+    "MouseMixin",
+    "ScreenMixin",
+    "accessors.FramebufferAccessor",
+    "accessors.KeyboardAccessor",
+    "accessors.MatrixStackEntryAccessor",
+    "accessors.MinecraftClientAccessor",
+    "accessors.NativeImageAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
