@@ -17,8 +17,10 @@ import java.util.function.IntConsumer;
 
 public final class Casino extends JavaPlugin implements FastAccess {
     private final Map<Class<? extends Module>, Module> modules = new HashMap<>();
+
     @Getter
     private static Casino instance;
+
     @Override
     public void onEnable() {
         instance = this;
@@ -65,6 +67,7 @@ public final class Casino extends JavaPlugin implements FastAccess {
             buffer.sendPayload(player, "house:scroll");
         });
     }
+
     private List<List<SlotEnum>> generatePanels(ModTransfer buffer) {
         List<List<SlotEnum>> panels = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
@@ -127,16 +130,20 @@ public final class Casino extends JavaPlugin implements FastAccess {
 
         return result;
     }
+
     private void register(Module module) {
         module.load();
         modules.put(module.getClass(), module);
     }
+
     @SuppressWarnings("unchecked")
     public <T extends Module> T getModule(Class<T> moduleClass) {
         return (T) modules.get(moduleClass);
     }
+
     @Override
     public void onDisable() {
         modules.values().forEach(Module::unload);
     }
+
 }

@@ -20,10 +20,12 @@ public enum SlotEnum {
     Q(1.5, 1, 0.5, 0.25),
     J(1.5, 1, 0.5, 0.25),
     TEN(1.5, 1, 0.5, 0.25);
+
     private final double win5;
     private final double win4;
     private final double win3;
     private final double win2;
+
     public double getSum(int count) {
         switch (count) {
             case 2:
@@ -38,6 +40,7 @@ public enum SlotEnum {
                 throw new IllegalArgumentException();
         }
     }
+
     public static RandomObject<SlotEnum> getRandom() {
         Map<SlotEnum, Integer> map = new HashMap<>();
         map.put(DOG1, 25);
